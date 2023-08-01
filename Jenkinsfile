@@ -3,10 +3,10 @@ pipeline {
 
      environment{
        registryCredential = 'ecr:eu-west-2:jenkins-awscred'
-       appRegistry = "175223620529.dkr.ecr.eu-west-2.amazonaws.com/capstoneproject"
+       appRegistry = "175223620529.dkr.ecr.eu-west-2.amazonaws.com/capstoneproject-test"
        capstoneRegistry = "https://175223620529.dkr.ecr.eu-west-2.amazonaws.com"
        cluster = "CapstoneProject"
-        service = "capstoneproject-prod"
+        service = "capstoneproject-test"
    }
 
     stages {
@@ -44,7 +44,7 @@ pipeline {
 
       stage('Deploy to ecs'){
          when {
-                branch "master"
+                branch "test"
          }
          steps{
             withAWS(credentials: 'jenkins-awscred', region: 'eu-west-2'){
