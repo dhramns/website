@@ -47,7 +47,7 @@ pipeline {
                 branch "master"
          }
          steps{
-            withAWS(credentials: 'cred', region: 'eu-west-2'){
+            withAWS(credentials: 'jenkins-awscred', region: 'eu-west-2'){
                 sh 'aws ecs update-service --cluster ${cluster} --service ${service} --force-new-deployment'
             }
          }
