@@ -2,7 +2,7 @@ pipeline {
     agent any
 
      environment{
-       registryCredential = 'ecr:eu-west-1:cred'
+       registryCredential = 'ecr:eu-west-2:cred'
        appRegistry = "175223620529.dkr.ecr.eu-west-2.amazonaws.com/capstoneproject"
        capstoneRegistry = "https://175223620529.dkr.ecr.eu-west-2.amazonaws.com"
        cluster = "CapstoneProject"
@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Clone Website') {
             steps {
-                git url:'https://github.com/dhramns/website'
+                git url:'https://github.com/dhramns/website..'
             }
         }
 
