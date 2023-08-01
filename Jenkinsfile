@@ -27,7 +27,7 @@ pipeline {
        stage('Test Website') {
             steps {
                 // Run tests on the website
-                sh 'echo "Running tests on the capstone website"'
+                sh 'echo "Running tests on the capstone website."'
             }
        }
 
